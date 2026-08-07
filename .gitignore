@@ -1,0 +1,34 @@
+# Ignorar ficheiros de sistema e temporários
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# macOS
+__MACOSX/
+.DS_Store
+
+# Windows
+desktop.ini
+Thumbs.db
+
+# Vídeos (ficheiros demasiado grandes)
+*.mp4
+*.avi
+*.mov
+
+# Ficheiros temporários
+*.tmp
+*.log
+~$*
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user

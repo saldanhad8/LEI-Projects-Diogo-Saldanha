@@ -1,0 +1,604 @@
+{
+  "info": {
+    "name": "Metro Mondego - Coleção Completa (1 a 14)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "adminToken",
+      "value": ""
+    },
+    {
+      "key": "customerToken",
+      "value": ""
+    },
+    {
+      "key": "purchaseId",
+      "value": ""
+    },
+    {
+      "key": "travelDate",
+      "value": "2026-05-19"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Buscar token",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"superadmin\",\n    \"password\": \"admin\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/dbproj/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Add admin",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4ifSwiZXhwIjoxNzc4MjU5MTYyfQ.CTBU1YEmraMm-7mB68p3PwxBwD3fF4BYmhx-7lHfasA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"novo_admin@metromondego.pt\",\n  \"name\": \"Novo Administrador\",\n  \"password\": \"admin_seguro\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/dbproj/register/admin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "register",
+            "admin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Add client",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4ifSwiZXhwIjoxNzc4MjU5MTYyfQ.CTBU1YEmraMm-7mB68p3PwxBwD3fF4BYmhx-7lHfasA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"João Cliente\",\n  \"nif\": \"123456789\",\n  \"phone\": \"912345678\",\n  \"email\": \"joao@email.pt\",\n  \"password\": \"pass_secreta\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/dbproj/register/customer",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "register",
+            "customer"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Update OperaçãoLinha",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4ifSwiZXhwIjoxNzc4MjU5MjczfQ.SNUo1QrrAO2BY3qRjbm1dT22T_3CyCy3WKC8nbPxpaE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_time\": \"06:30:00\",\n  \"end time\": \"23:00:00\",\n  \"frequency_minutes\": 15,\n  \"vehicle_capacity\": 60\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/dbproj/line_operation/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "line_operation",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Atualizar tarifário",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4ifSwiZXhwIjoxNzc4MjU5MjczfQ.SNUo1QrrAO2BY3qRjbm1dT22T_3CyCy3WKC8nbPxpaE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 1.80,\n  \"effective_from\": \"2026-06-01\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/dbproj/fares/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "fares",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6.Notice Broadcast",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4ifSwiZXhwIjoxNzc5MTEzNjY2fQ.bC1ElbVtI-t_hm8mjxWR0bCiiXpKS_gd7t_Walo0L7s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Greve\",\r\n    \"message\": \"Possíveis atrasos entre as 10h e 13h\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/dbproj/notices/broadcast",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "notices",
+            "broadcast"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7.Create Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4ifSwiZXhwIjoxNzc5MTEzNjY2fQ.bC1ElbVtI-t_hm8mjxWR0bCiiXpKS_gd7t_Walo0L7s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Ferias Verao\",\r\n    \"line_id\": 1,\r\n    \"product_type\": 2,\r\n    \"discount_percent\": 20,\r\n    \"start_date\": \"2026-07-01\",\r\n    \"end_date\": \"2026-07-31\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/dbproj/promotions",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "promotions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8.List Lines",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6ImpvYW9AbWV0cm8ucHQiLCJyb2xlIjoiY2xpZW50ZSJ9LCJleHAiOjE3NzkxMTI0Nzl9.THOy2OtTE8qMsnHXAn0KIflrTo7N1Vj2eA6JYVyabVc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/dbproj/lines_next",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "lines_next"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9.Add Wallet Funds",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0LCJ1c2VybmFtZSI6ImpvYW9AbWV0cm8ucHQiLCJyb2xlIjoiY2xpZW50ZSJ9LCJleHAiOjE3NzkxMTI0Nzl9.THOy2OtTE8qMsnHXAn0KIflrTo7N1Vj2eA6JYVyabVc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"amount\": 20.00,\r\n    \"payment_method\": \"card\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/dbproj/wallet/topup",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "dbproj",
+            "wallet",
+            "topup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Admin",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin1\",\n  \"password\": \"admin\"\n}"
+        },
+        "url": "{{baseUrl}}/dbproj/user"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const data = pm.response.json();",
+              "pm.test('login admin ok', function () { pm.expect(data.status).to.eql(200); });",
+              "pm.collectionVariables.set('adminToken', data.results);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Login Cliente",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"joao\",\n  \"password\": \"admin\"\n}"
+        },
+        "url": "{{baseUrl}}/dbproj/user"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const data = pm.response.json();",
+              "pm.test('login cliente ok', function () { pm.expect(data.status).to.eql(200); });",
+              "pm.collectionVariables.set('customerToken', data.results);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "10. Purchase Ticket",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "const d = new Date();",
+              "d.setDate(d.getDate() + 1);",
+              "const yyyy = d.getFullYear();",
+              "const mm = String(d.getMonth() + 1).padStart(2, '0');",
+              "const dd = String(d.getDate()).padStart(2, '0');",
+              "pm.collectionVariables.set('travelDate', `${yyyy}-${mm}-${dd}`);"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const data = pm.response.json();",
+              "pm.test('purchase ok', function () { pm.expect(data.status).to.eql(200); });",
+              "if (data.results && data.results.purchase_id) {",
+              "  pm.collectionVariables.set('purchaseId', data.results.purchase_id);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"line_id\": 2,\n  \"product_type\": \"single_trip\",\n  \"travel_date\": \"{{travelDate}}\"\n}"
+        },
+        "url": "{{baseUrl}}/dbproj/purchase"
+      }
+    },
+    {
+      "name": "11. Use Ticket",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{customerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"used_at\": \"{{travelDate}} 08:30:00\",\n  \"station_id\": 1\n}"
+        },
+        "url": "{{baseUrl}}/dbproj/ticket/use/{{purchaseId}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const data = pm.response.json();",
+              "pm.test('use ticket ok', function () { pm.expect(data.status).to.eql(200); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "12. Demand Report",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{adminToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/dbproj/report/demand"
+      }
+    },
+    {
+      "name": "13. Top Spenders Report",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{adminToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/dbproj/report/top_spenders"
+      }
+    },
+    {
+      "name": "14. Monthly Report",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{adminToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/dbproj/report/monthly"
+      }
+    }
+  ]
+}
