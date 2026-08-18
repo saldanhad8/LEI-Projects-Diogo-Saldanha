@@ -20,20 +20,11 @@
 ```
 LEI-Projects-Diogo-Saldanha/
 │
-├── PPP/
-│   └── projeto_final/          # Mini-Projeto — Aplicação de Gestão de Doentes
-│
-├── ECAC/
-│   └── TP1/                    # Classificação de Atividades Humanas
-│
-├── SO/
-│   └── SO_FINAL/               # Simulador de Urgências Hospitalar
-│
-├── FIA/
-│   └── TP1/                    # Lunar Lander — Uma Abordagem Reactiva
-│
-└── BD/
-    └── metafinal/              # Databases Project — Sistema de Metro
+├── PPP/        # Mini-Projeto — Aplicação de Gestão de Doentes
+├── ECAC/       # Classificação de Atividades Humanas
+├── SO/         # Simulador de Urgências Hospitalar
+├── FIA/        # Lunar Lander — Uma Abordagem Reactiva
+└── BD/         # Databases Project — Sistema de Metro
 ```
 
 ---
@@ -42,7 +33,7 @@ LEI-Projects-Diogo-Saldanha/
 
 ### 🔵 Princípios de Programação Procedimental (PPP) — Mini-Projeto: Aplicação de Gestão de Doentes
 
-**Localização:** [`2ºANO/PPP/projeto_final/`](./2ºANO/PPP/projeto_final/)
+**Localização:** [`PPP/`](./PPP/)
 
 > **Trabalho de grupo** desenvolvido em **linguagem C**. Implementa um sistema de gestão de doentes com:
 
@@ -58,9 +49,7 @@ LEI-Projects-Diogo-Saldanha/
 
 ### 🟢 Engenharia de Características para Aprendizagem Computacional (ECAC) — Classificação de Atividades Humanas
 
-**Localização:** [`4ºANO/ECAC/TP1/`](./4ºANO/ECAC/TP1/)
-
-**Colaboradores:** Diogo Saldanha · Tiago Alves
+**Localização:** [`ECAC/`](./ECAC/)
 
 > **Trabalho de grupo** que implementa um pipeline completo de Machine Learning para **classificação de atividades humanas** com base em dados de sensores inerciais (acelerómetro/giroscópio):
 
@@ -79,9 +68,7 @@ LEI-Projects-Diogo-Saldanha/
 
 ### 🟠 Sistemas Operativos (SO) — Simulador de Urgências Hospitalar
 
-**Localização:** [`4ºANO/SO/SO_FINAL/`](./4ºANO/SO/SO_FINAL/)
-
-**Colaboradores:** Diogo Saldanha · João Dias
+**Localização:** [`SO/`](./SO/)
 
 > **Trabalho de grupo** que simula um **sistema de urgências hospitalar** com múltiplos processos concorrentes:
 
@@ -99,9 +86,7 @@ LEI-Projects-Diogo-Saldanha/
 
 ### 🟣 Fundamentos de Inteligência Artificial (FIA) — Lunar Lander: Uma Abordagem Reactiva
 
-**Localização:** [`4ºANO/FIA/TP1/`](./4ºANO/FIA/TP1/)
-
-**Colaboradores:** Diogo Saldanha · Flávia Salta
+**Localização:** [`FIA/`](./FIA/)
 
 > **Trabalho de grupo** de **Reinforcement Learning** usando o ambiente `LunarLander-v3` do OpenAI Gymnasium. O agente aprende a aterrar uma nave lunar em modo de ação contínua:
 
@@ -116,7 +101,7 @@ LEI-Projects-Diogo-Saldanha/
 
 ### 🔴 Bases de Dados (BD) — Databases Project: Sistema de Metro
 
-**Localização:** [`4ºANO/BD/metafinal/`](./4ºANO/BD/metafinal/)
+**Localização:** [`BD/`](./BD/)
 
 > **Trabalho de grupo** que desenvolve uma **API REST** para um sistema de gestão de **Metro**. Inclui:
 
